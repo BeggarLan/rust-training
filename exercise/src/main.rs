@@ -16,7 +16,7 @@ fn main() {
     tupleTest();
     refTest();
     // let dangleRef = dangleRef();
-    dangleRef2();
+    // dangleRef2();
 }
 
 fn arrayTest() {
@@ -50,13 +50,14 @@ fn refTest() {
 //     return &str;
 // }
 
-fn dangleRef2() {
-    println!("dangleRef2");
-    let ref_x: &i32;
-    {
-        let x : i32 = 10;
-        ref_x = &x;
-        println!("ref_x: {ref_x}");
-    }
-    println!("ref_x: {ref_x}");
-}
+// fn dangleRef2() {
+//     println!("dangleRef2");
+//     let ref_x: &i32;
+//     {
+//         let x : i32 = 10;
+//         ref_x = &x;
+//         println!("ref_x: {ref_x}");
+//     }
+//     println!("ref_x: {ref_x}");
+// }
+
