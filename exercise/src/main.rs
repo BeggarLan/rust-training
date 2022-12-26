@@ -15,6 +15,8 @@ fn main() {
     arrayTest();
     tupleTest();
     refTest();
+    // let dangleRef = dangleRef();
+    dangleRef2();
 }
 
 fn arrayTest() {
@@ -36,9 +38,25 @@ fn refTest() {
 
     let mut x: i32 = 10;
     let ref_x: &mut i32 = &mut x;
-    let ref_y: &mut i32 = &mut x;
+    // let ref_y: &i32 = &x;
     *ref_x = 20;
 
     // println!("x: {x}");
+    println!("ref_x: {ref_x}");
+}
+
+// fn dangleref() -> &String {
+//     let str : String::from("hello");
+//     return &str;
+// }
+
+fn dangleRef2() {
+    println!("dangleRef2");
+    let ref_x: &i32;
+    {
+        let x : i32 = 10;
+        ref_x = &x;
+        println!("ref_x: {ref_x}");
+    }
     println!("ref_x: {ref_x}");
 }
